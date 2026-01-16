@@ -1,0 +1,10 @@
+Audio files would go here:
+- ambient-drone.mp3
+- deep-space.mp3  
+- whoosh.mp3
+- blackhole-hum.mp3
+- ship-pass.mp3
+- asteroid-rumble.mp3
+- nebula-pad.mp3
+
+For now, the audio system will gracefully handle missing files.

@@ -1,0 +1,83 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    background: #000000;
+    overflow: hidden;
+    font-family: 'Courier New', monospace;
+}
+
+#canvas {
+    width: 100%;
+    height: 100%;
+    display: block;
+    cursor: none;
+}
+
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000000;
+    opacity: 1;
+    transition: opacity 3s ease-in-out;
+    pointer-events: none;
+    z-index: 1000;
+}
+
+#overlay.fade-out {
+    opacity: 0;
+}
+
+/* Dev Panel Styles */
+#dev-panel {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: rgba(0, 0, 0, 0.8);
+    border: 1px solid #333;
+    padding: 20px;
+    color: #fff;
+    font-size: 12px;
+    display: none;
+    z-index: 2000;
+    min-width: 250px;
+    border-radius: 5px;
+}
+
+#dev-panel h3 {
+    margin-bottom: 10px;
+    color: #00ff00;
+}
+
+#dev-panel .control {
+    margin-bottom: 10px;
+}
+
+#dev-panel label {
+    display: block;
+    margin-bottom: 2px;
+    font-size: 11px;
+    color: #ccc;
+}
+
+#dev-panel input[type="range"] {
+    width: 100%;
+    margin-bottom: 5px;
+}
+
+#dev-panel .value {
+    color: #00ff00;
+    font-weight: bold;
+}
+
+.hidden {
+    display: none !important;
+}
