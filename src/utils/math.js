@@ -32,17 +32,18 @@ export function hash(x, y, z = 0) {
 export function noise2D(x, y) {
   const X = Math.floor(x) & 255;
   const Y = Math.floor(y) & 255;
-  
+
   x -= Math.floor(x);
   y -= Math.floor(y);
-  
+
   const u = fade(x);
   const v = fade(y);
-  
+
   const A = p[X] + Y;
   const B = p[X + 1] + Y;
-  
-  return lerp(v, 
+
+  return lerp(
+    v,
     lerp(u, grad(p[A], x, y), grad(p[B], x - 1, y)),
     lerp(u, grad(p[A + 1], x, y - 1), grad(p[B + 1], x - 1, y - 1))
   );
@@ -55,7 +56,7 @@ function fade(t) {
 function grad(hash, x, y) {
   const h = hash & 15;
   const u = h < 8 ? x : y;
-  const v = h < 4 ? y : (h === 12 || h === 14 ? x : 0);
+  const v = h < 4 ? y : h === 12 || h === 14 ? x : 0;
   return ((h & 1) === 0 ? u : -u) + ((h & 2) === 0 ? v : -v);
 }
 

@@ -1,11 +1,11 @@
-import { defineConfig } from 'vite';
+import { defineConfig } from "vite";
 
 export default defineConfig({
-  build: { 
-    target: 'esnext'
+  build: {
+    target: "esnext",
   },
-  optimizeDeps: { 
-    exclude: ['three'] 
+  optimizeDeps: {
+    exclude: ["three"],
   },
-  assetsInclude: ['**/*.glsl']
+  assetsInclude: ["**/*.glsl"],
 });
